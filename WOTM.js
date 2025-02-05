@@ -1,4 +1,4 @@
-// Website of the Minute (WOTM)
+// Website of the Minute (WOTM) 
 const wotmWebsites = [
     {
         img: "./sources/Website-Logos/egochaser.png",
