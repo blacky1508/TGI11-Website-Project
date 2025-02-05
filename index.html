@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EyeFind.info</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <script src="script.js" defer></script>
+        <script src="WOTM.js" defer></script>
+        <script src="scriptNotification.js" defer></script>
+    </head>
+    <body>
+        <div class="grid-layout">
+            <header class="header">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="./sources/Website-Logos/eyefind-logo.png" alt="EyeFind Logo" class="eyeFindLogo">
+                    </a>
+                </div>
+                <div class="search-container">
+                    <form onsubmit="return search()">
+                        <div class="search-wrapper">
+                            <button class="search-button"><i class="fas fa-search"></i></button>
+                            <input type="text" id="search-input" placeholder="Search Eyefind" name="query" onkeyup="showSuggestions()">
+                        </div>
+                        <div id="suggestions" class="suggestions-box"></div>
+                    </form>
+                    <button id="random-button" class="random-button">Random</button>
+                </div>
+                <div class="icon-container">
+                    <a href="notifications.html" onclick="return checkAccess()">
+                        <img src="./sources/Website-Logos/notification-bell.png" alt="Notification Bell Icon" class="notification-icon">
+                    </a>
+                    <a href="logIn.html" id="auth-button">
+                        <img src="./sources/Website-Logos/log-in.png" alt="Log In Icon" class="login-icon">
+                    </a>
+                </div>
+                <nav class="nav-links">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="dynamicChange.html?category=entertainment"><i class="fas fa-film"></i> Media & Entertainment</a>
+                    <a href="dynamicChange.html?category=food"><i class="fas fa-utensils"></i> Food & Drink</a>
+                    <a href="dynamicChange.html?category=money"><i class="fas fa-wallet"></i> Money & Services</a>
+                    <a href="dynamicChange.html?category=travel"><i class="fas fa-plane"></i> Travel & Transport</a>
+                </nav>
+            </header>
+            <main>                
+                <h2 style="margin-bottom: 5px; font-size: 30px; text-align: center;">Welcome to EyeFind.info</h2>
+                <p style="margin-top: 5px; font-size: 18px; text-align: center; margin-bottom: 20px;">Explore the virtual world with EyeFind!</p>
+                <div class="container">
+                    <div class="weather-container" style="background-color: #e0dede7e;">
+                        <h3>Current Weather in Los Santos</h3>
+                        <p style="font-size: 18px; margin-bottom: 5px" id="weather-description"></p>
+                        <img style="margin-bottom: 5px;" id="weather-icon" class="weather-icon" alt="Weather Icon">
+                        <p style="margin-top: 5px;"><strong>Temperature:</strong> <span id="weather-temp"></span>°C</p>
+                        <p><strong>Feels Like:</strong> <span id="weather-feels-like"></span>°C</p>
+                        <p><strong>Humidity:</strong> <span id="weather-humidity"></span>%</p>
+                    </div>
+            
+                    <a id="wotm-link" href="#" target="_blank" class="link-hover-mF">
+                        <div class="WebsiteOfTheMinute-container" style="background-color: #b00f3d67; height: 252px;">
+                            <h3>Website Of The Minute</h3>
+                            <img id="wotm-img" src="" class="wotm-icon" alt="Website of the minute">
+                            <p style = "margin-top: 25px" id="wotm-description1"></p>
+                            <p style = "margin-top: 25px" id="wotm-description2"></p>
+                        </div>
+                    </a>
+            
+                    <a href="./dynamicSubsite.html?bg=demowebsite" class="link-hover-mF">
+                        <div class="custom-tile" style="background-color: #8bb4db8a;">
+                            <h3>Explore Cars</h3>
+                            <img src="./sources/Website-Logos/legendarymotorsport.png" class="tile-icon" alt="Legendary Motorsport">
+                            <p>Buy and sell luxury cars here.</p>
+                            <p>- if you don't care about the origin of the vehicle</p>
+                        </div>
+                    </a>
+            
+                    <a href="./dynamicSubsite.html?bg=demowebsite" class="link-hover-mF">
+                        <div class="custom-tile alternate" style="background-color: #f7ddb58b;">
+                            <h3>Taco Bomb</h3>
+                            <img src="./sources/Website-Logos/tacobomb.png" class="tile-icon" alt="Taco Bomb">
+                            <p>Taco Bomb is Mexican food, prepared the</p>
+                            <p>right way: the American way</p>
+                        </div>
+                    </a>
+            
+                    <a href="./dynamicSubsite.html?bg=demowebsite" class="link-hover-mF">
+                    <div class="banking-tile" style="background-color: #02b64d7e;">
+                        <h3>Stock exchange</h3>
+                        <img src="./sources/Website-Logos/bawsaq.png" class="tile-icon" alt="Bank of Liberty">
+                        <p>Manage your finances smartly - or at least pretend to...</p>
+                        <p>Dealing in life’s ups and <span style="font-weight:bold; font-size: 20px;">downs</span>.</p>
+
+                    </div>
+                    </a>
+                </div>
+            </main>
+            <footer>
+                <a class="footerModules" href="termsOfUse.html">Terms of Use</a>
+                <p style="display: inline; margin-right: 20px;">&copy; 2025 EyeFind.info. All rights reserved.</p>
+                <a class="footerModules" href="about.html">About</a>
+                <button id="darkmode-toggle">🌙 Dark Mode</button>
+            </footer>
+        </div>
+    </body>
+</html>
