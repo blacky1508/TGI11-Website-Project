@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>EyeFind.info - About</title>
+      <link rel="stylesheet" href="style.css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <script src="script.js" defer></script>
+   </head>
+   <body>
+      <div class="grid-layout">
+         <header class="header">
+            <div class="logo-container">
+               <a href="index.html">
+               <img src="./sources/Website-Logos/eyefind-logo.png" alt="EyeFind Logo" class="eyeFindLogo">
+               </a>
+            </div>
+            <div class="search-container">
+               <form onsubmit="return search()">
+                  <div class="search-wrapper">
+                     <button class="search-button"><i class="fas fa-search"></i></button>
+                     <input type="text" id="search-input" placeholder="Search Eyefind" name="query" onkeyup="showSuggestions()">
+                  </div>
+                  <div id="suggestions" class="suggestions-box"></div>
+               </form>
+               <button id="random-button" class="random-button">Random</button>
+            </div>
+            <div class="icon-container">
+               <a href="notifications.html" onclick="return checkAccess()">
+               <img src="./sources/Website-Logos/notification-bell.png" alt="Notification Bell Icon" class="notification-icon">
+               </a>
+               <a href="logIn.html" id="auth-button">
+               <img src="./sources/Website-Logos/log-in.png" alt="Log In Icon" class="login-icon">
+               </a>
+            </div>
+            <nav class="nav-links">
+               <a href="index.html"><i class="fas fa-home"></i> Home</a>
+               <a href="dynamicChange.html?category=entertainment"><i class="fas fa-film"></i> Media & Entertainment</a>
+               <a href="dynamicChange.html?category=food"><i class="fas fa-utensils"></i> Food & Drink</a>
+               <a href="dynamicChange.html?category=money"><i class="fas fa-wallet"></i> Money & Services</a>
+               <a href="dynamicChange.html?category=travel"><i class="fas fa-plane"></i> Travel & Transport</a>
+            </nav>
+         </header>
+         <main style="font-size: 20px; margin-left: 50px;">
+            <h2>What's eyefind.info?</h2>
+            <p style="line-height: 100%; font-size: 20px; margin-top: 30px;">The all-knowing search engine that meticulously tracks every aspect of your life!</p>
+            <p style="line-height: 100%; font-size: 16px; margin-bottom: 60px;">- it doesn’t just index the web — it maps your world, sending cars through your neighborhood to capture every detail, collecting your private data without you even realizing it.</p>
+            <br>
+            <h3>HOW-TO enjoy EyeFind.info to the fullest!</h3>
+            <p>By opening the HTML file directly (by double-clicking on the e.g. index.html file), the JavaScript function is released from the HTML. </p>
+            <p style="font-weight: bold;">In other words, the website does not work as it should!</p>
+            <a>
+               The problem is due to the fact that browsers handle local files (file:// protocol) differently than a local development environment (http://-Protokoll), such as Visual Studio Code with a live server.</p>
+               <br>
+               <p>So here is a QUICK FIX!</p>
+               <br>
+               <br>
+               <br>
+               <p style="font-weight: bold;">Step 1</p>
+               <img src="./sources/HowTo/Screen1.jpg" alt="Step 1">
+               <p class="pHT">To start, please open up "Visual Studio Code"</p>
+               <br>
+               <br>
+               <br>
+               <p style="font-weight: bold;">Step 2</p>
+               <img src="./sources/HowTo/Screen2.jpg" style="width:1000px" alt="Step 2">
+               <p>Secondly open my project via the menu: File < Open Folder < "choose Folder"</p>
+               <br style="border-top: 5px solid #919191;">
+               <br>
+               <img src="./sources/HowTo/Screen3.jpg" style="width:1000px" alt="Step 3">
+               <br>
+               <br>
+               <br>
+               <p style="font-weight: bold;">Step 3</p>
+               <img src="./sources/HowTo/Screen4.jpeg" style="width:300px" alt="Step 3">
+               <p>Perfect, now the project is opened! Now we need to install a required Extencion to run smoothly...</p>
+               <br>
+               <br>
+               <br>
+               <p style="font-weight: bold;">Step 4</p>
+               <img src="./sources/HowTo/Screen5.jpeg" style="width:1000px" alt="Step 4">
+               <p>Type "Live Preview" into the search bar</p>
+               <p>The first result must be the right one - from Microsoft</p>
+               <p>Then click on "Install"</p>
+               <br>
+               <br>
+               <br>
+               <p style="font-weight: bold;">Step 5</p>
+               <img src="./sources/HowTo/Screen6.jpeg" style="width:1000px" alt="Step 5">
+               <p>If the installation was succesfull, you can close the extencion tab. </p>
+               <p>Head back to the folder and look for index.html. </p>
+               <p>Right click on it an click "Show Preview"</p>
+               <br>
+               <br>
+               <br>
+               <p style="font-weight: bold;">Step 6</p>
+               <img src="./sources/HowTo/Screen7.jpeg" style="width:1000px" alt="Step 6">
+               <p>Now the Website is visible - but were not done yet...</p>
+               <p>Click in the top center on the URL and copy the URL</p>
+               <br>
+               <br>
+               <br>
+               <p style="font-weight: bold;">Step 7</p>
+               <img src="./sources/HowTo/Screen8.jpeg" style="width:800px" alt="Step 7">
+               <p>Now head to your favourite Browser and paste the URL in the search bar.</p>
+               <br>
+               <br>
+               <br>
+               <p style="font-weight: bold;">Step 8 - Done!</p>
+               <img src="./sources/HowTo/Screen9.jpeg" style="width:1000px" alt="Step 8">
+               <p>Finally you're ready to go!</p>
+               <h4>Enjoy!</h4>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <p style="border-top: 4px solid #fe0000; font-weight: bold;">
+                  <br>
+                  Declaration on use and legal classification
+               </p>
+               <p>
+                  This website was created for <span style="font-weight:bold">educational purposes only</span> and is not an official platform or affiliated with Rockstar Games. The reproduction of the design, the name “EyeFind.info” and certain logos is for demonstration and non-commercial use only.
+                  No financial intentions whatsoever are being pursued with this website. Any use is non-profit and serves exclusively as a technical and creative learning project. 
+               </p>
+               <p>
+                  All rights to “EyeFind.info”, the associated logos and other protected content are owned by Rockstar Games.
+                  The code created by me is my intellectual property and is subject to my copyright. This website is not an official reproduction of or competition to Rockstar Games. Should there be any legal concerns or claims on the part of the copyright holder, I am prepared to make appropriate adjustments or remove the website.
+               </p>
+               <p>
+                  Disclaimer of liability
+                  The operator of this website assumes no liability for the accuracy, completeness or timeliness of the information provided. Any liability for direct or indirect damages arising from the use of this website is excluded to the extent permitted by law.
+               </p>
+               <p style="font-size: 12px; line-height: 0px;">&copy; Raphael Schwarz</p>
+         </main>
+         <footer>
+         <a class="footerModules" href="termsOfUse.html">Terms of Use</a>
+         <p style="display: inline; margin-right: 20px;">&copy; 2025 EyeFind.info. All rights reserved.</p>
+         <a class="footerModules" href="about.html">About</a>
+         <button id="darkmode-toggle">🌙 Dark Mode</button>
+         </footer>
+      </div>
+   </body>
+</html>
