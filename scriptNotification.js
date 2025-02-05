@@ -2,7 +2,7 @@
 const NotificationSystem = (() => {
     const container = document.getElementById("notification-container");
 
-    // Alle möglichen Benachrichtigungen mit Links
+    // Alle möglichen Benachrichtigungen mit Links 
     const notifications = [
         { message: "Learn how to display EyeFind.info correctly!", img: "./sources/Website-Logos/eyefind-logo.png", link: "./about.html", id: "firstNotification" },
         { message: "Check out our new feature!", img: "./sources/Website-Logos/eyefind-logo.png", link: "./index.html" },
