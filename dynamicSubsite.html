@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EyeFind.info</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <div class="grid-layout">
+            <header class="header">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="/sources/Website-Logos/eyefind-logo.png" alt="EyeFind Logo" class="eyeFindLogo">
+                    </a>
+                </div>
+                <div class="search-container">
+                    <form onsubmit="return search()">
+                        <div class="search-wrapper">
+                            <button class="search-button"><i class="fas fa-search"></i></button>
+                            <input type="text" id="search-input" placeholder="Search Eyefind" name="query" onkeyup="showSuggestions()">
+                        </div>
+                        <div id="suggestions" class="suggestions-box"></div>
+                    </form>
+                    <button id="random-button" class="random-button">Random</button>
+                </div>
+                <div class="icon-container" style="margin-right: 40px;">
+                    <a href="notifications.html" onclick="return checkAccess()">
+                        <img src="/sources/Website-Logos/notification-bell.png" alt="Notification Bell Icon" class="notification-icon">
+                    </a>
+                    <a href="logIn.html" id="auth-button">
+                        <img src="/sources/Website-Logos/log-in.png" alt="Log In Icon" class="login-icon">
+                    </a>
+                </div>
+                <nav class="nav-links">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="dynamicChange.html?category=entertainment"><i class="fas fa-film"></i> Media & Entertainment</a>
+                    <a href="dynamicChange.html?category=food"><i class="fas fa-utensils"></i> Food & Drink</a>
+                    <a href="dynamicChange.html?category=money"><i class="fas fa-wallet"></i> Money & Services</a>
+                    <a href="dynamicChange.html?category=travel"><i class="fas fa-plane"></i> Travel & Transport</a>
+                </nav>
+            </header>
+        <main class="full-dynamic-site">
+        </main>
+        <footer>
+            <a class="footerModules" href="/termsOfUse.html">Terms of Use</a>
+            <p style="display: inline; margin-right: 20px;">&copy; 2025 EyeFind.info. All rights reserved.</p>
+            <a class="footerModules" href="/about.html">About</a>
+            <button id="darkmode-toggle">🌙 Dark Mode</button>
+        </footer>
+        <script>
+            /* Dynamic Subsite - Function */
+            function getQueryParam(param) {
+                const params = new URLSearchParams(window.location.search);
+                return params.get(param);
+            }
+            const bgParam = getQueryParam("bg");
+            console.log("bgParam:", bgParam); 
+
+            const backgrounds = {
+                demowebsite: "url('/sources/YOURWebsite.png')",
+            };
+            console.log("Backgrounds Object:", backgrounds); 
+
+            const main = document.querySelector("main");
+            if (bgParam && backgrounds[bgParam]) {
+                console.log("Setting background to:", backgrounds[bgParam]); 
+                main.style.backgroundImage = backgrounds[bgParam];
+                main.style.backgroundSize = "contain";
+                main.style.backgroundPosition = "center";
+                main.style.backgroundRepeat = "no-repeat";
+                main.style.marginBottom = "10 px";
+            }
+        </script>
+    </body>
+</html>

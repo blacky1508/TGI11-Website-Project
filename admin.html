@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #060606;
+            color: #f2f2f2;
+        }
+
+        button {
+            background-color: #3d87c4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #3c739f;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #3c739f;
+        }
+    </style>
+</head>
+<body>
+    <h2>EyeFind.info Admin</h2>
+    <button>
+        <a href="index.html" style="text-decoration: none; color:#f2f2f2; margin-top: 20px;">Home</a>
+    </button>
+    <button onclick="showAllUsers()">Show All Users</button>
+    <button onclick="clearLocalStorage()">Clear All Data</button>
+    
+    <div id="user-list"></div>
+
+    <script>
+        function showAllUsers() {
+            const userList = document.getElementById("user-list");
+            userList.innerHTML = "";
+
+            const users = Object.keys(localStorage)
+                .filter(key => key.startsWith("user_"))
+                .map(key => JSON.parse(localStorage.getItem(key)));
+
+            if (users.length === 0) {
+                userList.innerHTML = "<p>No users found!</p>";
+                return;
+            }
+            const userTable = document.createElement("table");
+            userTable.style.borderCollapse = "collapse";
+            userTable.style.width = "100%";
+            userTable.innerHTML = `
+                <tr>
+                    <th style="border: 1px solid #ccc; padding: 8px;">Username</th>
+                    <th style="border: 1px solid #ccc; padding: 8px;">Mail Address</th>
+                    <th style="border: 1px solid #ccc; padding: 8px;">Password</th>
+                </tr>
+            `;
+            users.forEach(user => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td style="border: 1px solid #ccc; padding: 8px;">${user.username}</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">${user.mailAddress}</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">${user.password}</td>
+                `;
+                userTable.appendChild(row);
+            });
+
+            userList.appendChild(userTable);
+        }
+        function clearLocalStorage() {
+            if (confirm("Are you sure you want to delete all stored data? This action cannot be undone.")) {
+                localStorage.clear();
+                alert("All stored data has been deleted.");
+                document.getElementById("user-list").innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>
