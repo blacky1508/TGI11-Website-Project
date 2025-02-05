@@ -1,6 +1,6 @@
 // Search - Function
 function search() {
-    const query = document.getElementById('search-input').value.toLowerCase();
+    const query = document.getElementById('search-input').value.toLowerCase(); 
 
     const pageMap = {
         // General Pages
